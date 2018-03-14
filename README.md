@@ -63,7 +63,7 @@ validates :type, presence: true
 |Column|Type|Options|
 |------|----|-------|
 |project_id|references|foreign_key: true|
-|tag_id|references|foreign_key: true, add_index|
+|tag_id|references|foreign_key: true|
 
 
 ### Association
