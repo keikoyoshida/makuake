@@ -28,7 +28,7 @@ validates :name, email, presence: true
 
 ### Association
 - has_many :tags, through: :project_tag
-- has_many :project_tags
+- has_many :projectTags
 - has_many :supporters, reports, supportComments, couses, products
 - belongs_to :user, :projectType
 
@@ -58,7 +58,7 @@ validates :title, :headingMovie, :contentHtml, :deadline, presence: true
 validates :type, presence: true
 
 
-## project_tags table
+## projectTags table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -78,7 +78,7 @@ validates :type, presence: true
 
 ### Association
 - has_many :projects through: :project_tags
-- has_many :project-tags
+- has_many :projectTags
 
 validates :tag, presence: true
 
@@ -177,14 +177,14 @@ validates :comment, presence: true
 |schedule|time|null: false|
 
 ### Association
-- has_many :users, through: :user_couse
-- has_many :user_couses
+- has_many :users, through: :userCouse
+- has_many :userCouses
 - belongs_to :project
 
 validates :price, :amount, :title, :schedule, presence: true
 
 
-## user_courses table
+## userCourses table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
@@ -208,14 +208,14 @@ validates :price, :amount, :title, :schedule, presence: true
 |lawNotificationHtml|text|null: false|
 
 ### Association
-- has_many :users through: :user_product
-- has_many :user_products
+- has_many :users through: :userProduct
+- has_many :userProducts
 - belongs_to :project
 
 validates :price, :amount, :title, :schedule, :lawNotificationHtml, presence: true
 
 
-## user_products table
+## userProducts table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
