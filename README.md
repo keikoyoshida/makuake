@@ -74,7 +74,7 @@ validates :type, presence: true
 
 |Column|Type|Options|
 |------|----|-------|
-|tag|string|null: false|
+|tag|string|null: false, add_index unique: true|
 
 ### Association
 - has_many :projects through: :project_tags
