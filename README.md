@@ -50,7 +50,7 @@ validates :title, :headingMovie, :contentHtml, :deadline, presence: true
 
 |Column|Type|Options|
 |------|----|-------|
-|type|string|null: false|
+|type|string|null: false, add_index unique: true|
 
 ### Association
 - has_many :projects
