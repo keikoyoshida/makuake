@@ -178,7 +178,7 @@ validates :comment, presence: true
 
 ### Association
 - has_many :users, through: :userCouse
-- has_many :userCouses
+- has_many :userCouses, courseOrProductOptions, shippingAddresses
 - belongs_to :project
 
 validates :price, :amount, :title, :schedule, presence: true
@@ -209,13 +209,14 @@ validates :price, :amount, :title, :schedule, presence: true
 
 ### Association
 - has_many :users through: :userProduct
-- has_many :userProducts
+- has_many :userProducts, courseOrProductOptions, shippingAddresses
 - belongs_to :project
 
 validates :price, :amount, :title, :schedule, :lawNotificationHtml, presence: true
 
 
 ## userProducts table
+
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
@@ -225,3 +226,70 @@ validates :price, :amount, :title, :schedule, :lawNotificationHtml, presence: tr
 - belongs_to :user, :product
 
 
+## courseOrProductOptions table
+
+|Column|Type|Options|
+|------|----|-------|
+|course_id|references|foreign_key: true|
+|project_id|references|foreign_key: true|
+|option_id|references|foreign_key: true|
+
+### Association
+- belongs_to :product, :course, :option
+
+validates :course_or_product, presence: true
+private
+def course_or_product
+  course.id.presence or product.id.presence
+end
+
+
+## options table
+|Column|Type|Options|
+|------|----|-------|
+|option|string|null: false|
+
+## Association
+- has_many :courseOrProductOptions
+
+validates :option, presence: true
+
+
+## shippingAddresses table
+|Column|Type|Options|
+|------|----|-------|
+|course_id|references|foreign_key: true|
+|project_id|references|foreign_key: true|
+|paymentMethod_id|references|foreign_key: true|
+|firstName|string|null: false|
+|familyName|string|null: false|
+|firstNameKana|string|null: false|
+|familyNameKana|string|null: false|
+|phoneNumber|integer|null: false|
+|zipCode|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|houseNumber|string|null: false|
+|buildingName|string|null: false|
+
+## Association
+- belongs_to :product, :course, :paymentMethod
+
+validates :course_or_product, presence: true
+private
+def course_or_product
+  course.id.presence or product.id.presence
+end
+validates :firstName, :familyName, :firstNameKana, :familyNameKana, :phoneNumber, :zipCode, :prefecture, :city, :houseNumber, presence: true
+
+
+## paymentMethods table
+
+|Column|Type|Options|
+|------|----|-------|
+|paymentMethod|string|null: false, add_index unique: true|
+
+## Association
+- has_many :shippingAddresses
+
+validates :paymentMethod, presence: true
