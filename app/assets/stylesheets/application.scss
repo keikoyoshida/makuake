@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "config/reset";
+@import "config/variable";
+@import "mixin/clearfix";
+@import "modules/project";
