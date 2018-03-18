@@ -1,39 +1,20 @@
-%header#headerIn
-  = link_to 'Makuake', root_path
-  = form_tag root_path, method: "get", id: "search_form", class: "findHeaderForm" do
-    = text_field_tag "keyword", "", class: "findHeaderInput"
-    = button_tag type: "submit", id: "start_search", class: "findFormHeaderSubmit" do
-      / <div class="findFormHeaderSubmit-iconbox">
-      / <i class="findFormHeaderSubmit-iconboxin">
-      /    <svg class="findFormHeaderSubmit-iconboxin--black"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search_fill"></use></svg>
-      / </i>
-      / <i class="findFormHeaderSubmit-iconboxin">
-      /    <svg class="findFormHeaderSubmit-iconboxin--white"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search_fill"></use></svg>
-      / </i>
-      / </div>
-      = icon("far", "edit", class: "findFormHeaderSubmit-iconbox")
-      %span.findFormHeaderSubmit-txt 探す
-  %nav#navigation
-    %ul.nav-header-box
-      %li
-        =link_to "プロジェクトを掲載する", "", class: "header-link-apply"
-      %li
-        .header-like-box
-          = link_to "", class: "header-like" do
-            = icon("far", "edit", class: "like-heart")
-            %p.like-heart-txt お気に入り
-            / <i><svg class="like-heart"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart_line"></use></svg></i>
-            / <p class="like-heart-txt">お気に入り<i class="like-heart-txt-new">new</i></p>
-            / </a>
-            / <div class="header-like-tooltip">
-            / <div class="header-like-tooltip-box">
-            / <i><svg class="header-like-tooltip-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart_line"></use></svg></i>
-            / <span class="header-like-tooltip-new">new</span>
-            / </div>
-            / <p class="header-like-tooltip-txt">あなたのお気に入りを<br>管理するページができました</p>
-            / <a class="header-like-tooltip-link" href="/favorite/tag/">詳しくはこちら</a>
-            / </div>
-      %li
-        = link_to "ログイン", "", class: "header-btn-login"
-      %li
-        = link_to "新規登録", "", id: "regist", class: "header-btn-signin"
+%header
+  .headerIn
+    = link_to 'M a k u a k e', root_path, class: "headerIn__siteId"
+    = form_tag root_path, method: "get", class: "headerIn__search" do
+      = text_field_tag "keyword", "", class: "headerIn__search__input"
+      = button_tag type: "submit", id: "start_search", class: "headerIn__search__button" do
+        = icon("fas", "search", class: "headerIn__search__button__icon")
+        %span.findFormHeaderSubmit-txt 探す
+    %nav.headerIn__nav
+      %ul.headerIn__nav__list
+        %li
+          =link_to "プロジェクトを掲載する", "", class: "headerIn__nav__list__apply"
+        %li
+          = link_to "", class: "headerIn__nav__list__favorite" do
+            = icon("far", "heart", class: "headerIn__nav__list__favorite__icon")
+            %p.headerIn__nav__list__favorite__text お気に入り
+        %li
+          = link_to "ログイン", "", class: "headerIn__nav__list__signIn"
+        %li
+          = link_to "新規登録", "", id: "regist", class: "headerIn__nav__list__signUp"

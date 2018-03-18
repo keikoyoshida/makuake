@@ -1,0 +1,111 @@
+html, body {
+  height: 100%;
+}
+
+header {
+  width: 100%;
+}
+
+.headerIn {
+  width: 1000px;
+  margin: auto;
+  height: 66px;
+  position: relative;
+  &__siteId {
+    height: 30px;
+    position: absolute;
+    top: 18px;
+    width: 136px;
+    text-decoration: none;
+  }
+  &__search {
+    display: flex;
+    position: absolute;
+    top: 15px;
+    left: 158px;
+    &__input {
+      width: 210px;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 12px;
+      font-size: 14px;
+      border-top: 1px solid #D3D3D3;
+      border-left: 1px solid #D3D3D3;
+      border-bottom: 1px solid #D3D3D3;
+      border-radius: 4px 0 0 4px!important;
+      outline: none;
+      border-right: none;
+    }
+    &__button {
+      width: 90px;
+      height: 38px;
+      border: 1px solid #d3d3d3;
+      border-radius: 0 4px 4px 0;
+      background: #ffffff;
+      overflow: hidden;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      color: #333333;
+      position: relative;
+    }
+  }
+  &__nav {
+    position: absolute;
+    right: 0;
+    height: 66px;
+    &__list {
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+        &__apply {
+          color: #333333;
+          font-size: 14px;
+          height: 66px;
+          margin-right: 23px;
+          text-decoration: none;
+        }
+        &__favorite {
+          color: #333333;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          height: 66px;
+          text-decoration: none;
+        }
+        &__signIn {
+          width: 86px;
+          height: 34px;
+          line-height: 35px;
+          text-align: center;
+          border-radius: 3px;
+          display: block;
+          background: #f7c600;
+          color: white;
+          font-size: 14px;
+          margin-left: 31px;
+          text-decoration: none;
+        }
+        &__signUp {
+          width: 86px;
+          height: 34px;
+          line-height: 32px;
+          text-align: center;
+          border-radius: 3px;
+          border: 2px solid #f7c600;
+          color: #f7c600;
+          display: block;
+          font-size: 14px;
+          margin-left: 16px;
+          text-decoration: none;
+        }
+    }
+  }
+}
+
+footer {
+
+}
