@@ -1,0 +1,30 @@
+.featuredProjects
+  .featuredProjects__slide
+    %ul
+      - for num in 1..1 do
+        %li.featuredProjects__slide__list{style: "background: url(http://see-holiday.com/wp-content/uploads/2014/07/26-e1404459210585.jpg) no-repeat 50% 50%; background-size: cover;"}
+          .featuredProjects__slide__list__item
+            = link_to "", target: "_self" do
+              .featuredProjects__slide__list__item__image
+                %img{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか"}
+              .featuredProjects__slide__list__item__title
+                %p Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか
+            .featuredProjects__slide__list__item__info
+              .featuredProjects__slide__list__item__info__style
+                %span.featuredProjects__slide__list__item__info__style__title 残り
+                %span.featuredProjects__slide__list__item__info__style__data ４日
+              .featuredProjects__slide__list__item__info__style
+                %span.featuredProjects__slide__list__item__info__style__title 集まっている金額
+                %span.featuredProjects__slide__list__item__info__style__data 4,000,000円
+              .featuredProjects__slide__list__item__info__targetAchievementRatio
+                .featuredProjects__slide__list__item__info__targetAchievementRatio__chart
+                  .featuredProjects__slide__list__item__info__targetAchievementRatio__chart__data
+                %span.featuredProjects__slide__list__item__info__style__data 600%
+            .featuredProjects__slide__list__item__look
+              = link_to "View", "https://www.makuake.com/apply/?from=hero_image_6", target: "_self"
+  %nav.featuredProjects__nav
+    %ul.featuredProjects__nav__list
+      - for num in 1..3 do
+        %li
+          =link_to "" do
+            %img.featuredProjects__nav__list__image{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか"}
