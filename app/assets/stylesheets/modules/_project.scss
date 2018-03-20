@@ -237,6 +237,23 @@
       margin-right: 35px;
     }
   }
+
+  &__explanationMakuake {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    &__title {
+      color: #808080;
+      font-size: 14px;
+      line-height: 60px;
+      height: 54px;
+      text-align: center;
+    }
+    &__explanation {
+      color: rgb(128, 128, 128);
+      font-size: 12px;
+      line-height: 2;
+    }
+  }
 }
 
 .showMore {
