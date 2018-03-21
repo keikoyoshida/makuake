@@ -16,12 +16,12 @@
       &__item {
         padding-top: 40px;
         margin: auto;
-        color: #ffffff;
+        color: $whiteBoxColor;
         width: 860px;
         margin-bottom: 36px;
         a {
           position: relative;
-          color: #ffffff;
+          color: $whiteBoxColor;
           display: flex;
           align-items: center;
           cursor: pointer;
@@ -47,7 +47,7 @@
         }
         &__info {
           margin: auto;
-          color: #ffffff;
+          color: $whiteBoxColor;
           width: 860px;
           display: flex;
           justify-content: center;
@@ -76,7 +76,7 @@
               margin-right: 16px;
               &__data {
                 width: 600%;
-                background: #bbf117;
+                background: $greenBoxColor;
                 height: 100%;
                 border-radius: 40px;
               }
@@ -121,9 +121,9 @@
           padding: 11px;
           // transition: background-color 0.2s;
           img{
-                width: 60px;
-                height: 34px;
-                border-radius: 2px;
+            width: 60px;
+            height: 34px;
+            border-radius: 2px;
           }
         }
       }
@@ -134,7 +134,7 @@
 .contents {
   width: 100%;
   height: auto;
-  background: #f5f5f5;
+  background: $grayBoxColor;
   overflow: hidden;
   padding-top: 40px;
   // position: relative;
@@ -153,7 +153,7 @@
     }
     &__sub {
       font-size: 16px;
-      color: #7f8488;
+      color: $grayTextColor;
     }
   }
   &__projects {
@@ -172,7 +172,7 @@
         width: 100%;
       }
       a {
-        color: #333333;
+        color: $blackTextColor;
       }
       &__image {
         position: relative;
@@ -198,7 +198,7 @@
           display: flex;
           align-items: center;
           &__icon {
-            color: #A8A8A8;
+            color: $grayIconColor;
             margin-right: 8px;
           }
         }
@@ -214,14 +214,14 @@
         &__chart {
           width: 224px;
           height: 8px;
-          background: #e6e6e6;
+          background: rgba(0, 0, 0, 0.2);
           border-radius: 100px;
           overflow: hidden;
           margin-right: 16px;
           &__data {
             width: 50%;
             height: 100%;
-            background: #BBF117;
+            background: $greenBoxColor;
             border-radius: 0 4px 4px 0;
           }
         }
@@ -238,15 +238,14 @@
   &__explanationMakuake {
     margin-top: 60px;
     margin-bottom: 80px;
+    color: $grayTextColor;
     &__title {
-      color: #808080;
       font-size: 14px;
       line-height: 60px;
       height: 54px;
       text-align: center;
     }
     &__explanation {
-      color: rgb(128, 128, 128);
       font-size: 12px;
       line-height: 2;
     }
@@ -261,7 +260,7 @@
   text-align: center;
   margin-left: auto;
   padding: 0 14px;
-  background: #f7c600;
+  background: $yellowBoxColor;
   color: white;
   display: flex;
   justify-content: center;

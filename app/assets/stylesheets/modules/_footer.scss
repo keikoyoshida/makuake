@@ -1,5 +1,5 @@
 footer {
-  background: #ffffff;
+  background: $whiteBoxColor;
   padding-top: 40px;
 }
 
@@ -14,9 +14,9 @@ footer {
       width: 484px;
       height: 86px;
       margin-right: 32px;
-      background: #82D9EE;
+      background: $blueBoxColor;
       border-radius: 2px;
-      color: #ffffff;
+      color: $whiteBoxColor;
       text-align: center;
       padding: 11px 16px;
       display: flex;
@@ -34,7 +34,7 @@ footer {
       }
       &__apply {
         p {
-          background: #F7C600;
+          background: $yellowBoxColor;
           font-size: 16px;
           border-radius: 90px;
           width: 184px;
@@ -48,9 +48,9 @@ footer {
     &__help {
       width: 484px;
       height: 86px;
-      background: #90e36f;
+      background: $paleGreenBoxColor;
       border-radius: 2px;
-      color: #ffffff;
+      color: $whiteBoxColor;
       text-align: center;
       padding: 11px 16px;
       line-height: 86px;
@@ -95,7 +95,7 @@ footer {
           height: 30px;
           position: relative;
           border-radius: 4px;
-          color: #ffffff;
+          color: $whiteBoxColor;
           text-align: center;
           font-size: 14px;
         }
@@ -124,7 +124,7 @@ footer {
     align-items: center;
     padding: 40px 0 80px;
     small {
-      color: #8B8B8B;
+      color: $grayTextColor;
       font-size: 10px;
     }
     &__companyInfo__list {
@@ -134,7 +134,7 @@ footer {
       width: 320px;
       &__link {
         font-size: 12px;
-        color: #777777;
+        color: $grayTextColor;
       }
     }
   }
@@ -144,7 +144,7 @@ footer {
     margin-bottom: 30px;
     position: relative;
     &__lookMore {
-      color: #333333;
+      color: $blackTextColor;
       font-size: 12px;
       margin-top: 25px;
       position: absolute;
@@ -165,7 +165,7 @@ footer {
         &__link {
           font-weight: bold;
           font-size: 13px;
-          color: #929292;
+          color: $grayTextColor;
         }
       }
       &__item:not(:last-child) {
@@ -177,14 +177,14 @@ footer {
 }
 
 .facebookColor {
-  background: #3B5998;
+  background: $facebookColor;
 }
 .twitterColor {
-  background: #55ACEE;
+  background: $twitterColor;
 }
 .lineColor {
-  background: #00C300;
+  background: $lineColor;
 }
 .instagramColor {
-  background: -webkit-linear-gradient(left, #F77D34 0%,#DB3076 50%, #A437B8 100%);
+  background: -webkit-linear-gradient(left, $instagramOrange 0%, $instagramRed 50%, $instagramPurple 100%);
 }
