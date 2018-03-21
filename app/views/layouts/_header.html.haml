@@ -1,6 +1,6 @@
 %header
   .headerIn
-    = link_to 'M a k u a k e', root_path, class: "headerIn__siteId"
+    %h1= link_to 'M a k u a k e', root_path, class: "headerIn__siteId"
     = form_tag root_path, method: "get", class: "headerIn__search" do
       = text_field_tag "keyword", "", class: "headerIn__search__input"
       = button_tag type: "submit", id: "start_search", class: "headerIn__search__button" do
