@@ -1,0 +1,274 @@
+.featuredProjects {
+  width: 100%;
+  position: relative;
+  height: auto;
+  &__slide {
+    position: relative;
+    height: 430px;
+    // overflow: hidden;
+    &__list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // transform: translateX(100%);
+      &__item {
+        padding-top: 40px;
+        margin: auto;
+        color: $whiteBoxColor;
+        width: 860px;
+        margin-bottom: 36px;
+        a {
+          position: relative;
+          color: $whiteBoxColor;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          outline: none;
+        }
+        &__image {
+          margin-right: 30px;
+          img {
+            width: 260px;
+            height: 146px;
+            border-radius: 4px;
+            display: block;
+            // transition: all 0.2s ease;
+          }
+        }
+        &__title {
+          font-size: 30px;
+          line-height: 1.4em;
+          p {
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.11);
+            overflow-wrap: break-word;
+          }
+        }
+        &__info {
+          margin: auto;
+          color: $whiteBoxColor;
+          width: 860px;
+          display: flex;
+          justify-content: center;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.11);
+          margin-bottom: 39px;
+          font-size: 17px;
+          &__style {
+            margin-right: 34px;
+            &__title {
+              top: -2px;
+              margin-right: 13px;
+            }
+            &__data {
+              font-size: 27px;
+            }
+          }
+          &__targetAchievementRatio {
+            display: flex;
+            align-items: center;
+            &__chart {
+              width: 40px;
+              height: 6px;
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 50px;
+              overflow: hidden;
+              margin-right: 16px;
+              &__data {
+                width: 600%;
+                background: $greenBoxColor;
+                height: 100%;
+                border-radius: 40px;
+              }
+            }
+          }
+        }
+        &__look {
+          text-align: center;
+          a {
+            display: inline-block;
+            padding: 15px 45px 14px 45px;
+            background-color: rgb(255, 255, 255);
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #696969;
+            font-weight: 700;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            font-family: "Open Sans", sans-serif;
+            // transition: all 0.2s ease;
+          }
+        }
+      }
+    }
+  }
+  &__nav {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+    text-align: center;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0.2);
+    &__list {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      li {
+        height: 100%;
+        a {
+          display: block;
+          padding: 11px;
+          // transition: background-color 0.2s;
+          img{
+            width: 60px;
+            height: 34px;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contents {
+  width: 100%;
+  height: auto;
+  background: $grayBoxColor;
+  overflow: hidden;
+  padding-top: 40px;
+  // position: relative;
+  section {
+    width: 1000px;
+    margin: auto;
+  }
+  &__catchCopy {
+    text-align: center;
+    margin-bottom: 46px;
+    &__main {
+      font-size: 26px;
+      margin-bottom: 21px;
+      letter-spacing: .08em;
+      text-indent: 9px;
+    }
+    &__sub {
+      font-size: 16px;
+      color: $grayTextColor;
+    }
+  }
+  &__projects {
+    display: flex;
+    flex-wrap: wrap;
+    &__project {
+      width: 310px;
+      height: 357px;
+      margin-bottom: 35px;
+      background: white;
+      font-size: 17px;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      article {
+        width: 100%;
+      }
+      a {
+        color: $blackTextColor;
+      }
+      &__image {
+        position: relative;
+        img {
+          display: block;
+          border-radius: 2px 2px 0 0;
+          width: 310px;
+          height: 174px;
+        }
+      }
+      &__title {
+        line-height: 1.6;
+        padding: 12px 14px 0;
+      }
+      &__info {
+        position: absolute;
+        bottom: 46px;
+        width: 282px;
+        padding: 0 14px;
+        display: flex;
+        justify-content: space-between;
+        &__style {
+          display: flex;
+          align-items: center;
+          &__icon {
+            color: $grayIconColor;
+            margin-right: 8px;
+          }
+        }
+      }
+      &__targetAchivementRatio {
+        position: absolute;
+        bottom: 19px;
+        width: 282px;
+        padding: 0 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__chart {
+          width: 224px;
+          height: 8px;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 100px;
+          overflow: hidden;
+          margin-right: 16px;
+          &__data {
+            width: 50%;
+            height: 100%;
+            background: $greenBoxColor;
+            border-radius: 0 4px 4px 0;
+          }
+        }
+        &__data {
+          font-size: 14px;
+        }
+      }
+    }
+    &__project:not(:nth-of-type(3n)) {
+      margin-right: 35px;
+    }
+  }
+
+  &__explanationMakuake {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    color: $grayTextColor;
+    &__title {
+      font-size: 14px;
+      line-height: 60px;
+      height: 54px;
+      text-align: center;
+    }
+    &__explanation {
+      font-size: 12px;
+      line-height: 2;
+    }
+  }
+}
+
+.showMore {
+  width: 130px;
+  height: 38px;
+  border-radius: 2px;
+  font-size: 16px;
+  text-align: center;
+  margin-left: auto;
+  padding: 0 14px;
+  background: $yellowBoxColor;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin-right: 10px;
+  }
+  &__icon {
+    font-size: 26px;
+  }
+}

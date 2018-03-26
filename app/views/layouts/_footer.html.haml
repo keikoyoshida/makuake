@@ -1,0 +1,114 @@
+%footer
+  .footerIn
+    .footerIn__help
+      = link_to "", class: "footerIn__help__apply" do
+        .footerIn__help__apply__siteExplanation
+          %p.footerIn__help__apply__siteExplanation__main 国内No.1
+          %p.footerIn__help__apply__siteExplanation__sub クラウドファンディングサイト
+        .footerIn__help__apply__apply
+          %p 掲載の相談をする
+      = link_to "", class: "footerIn__help__help" do
+        %p Makuakeヘルプ
+        = icon("fas", "angle-right", class: "footerIn__help__help__icon")
+    .footerIn__discover
+      .footerIn__discover__projects
+        %h5.footerIn__title プロジェクト
+        %ul.footerIn__contents__list
+          %li.footerIn__contents__list__item
+            = link_to "全てのプロジェクト", "", class: "footerIn__contents__list__item__link"
+          %li.footerIn__contents__list__item
+            = link_to "New!", "", class: "footerIn__contents__list__item__link"
+          %li.footerIn__contents__list__item
+            = link_to "支援金ランキング", "", class: "footerIn__contents__list__item__link"
+      .footerIn__discover__byTags
+        %h5.footerIn__title
+          人気のタグ
+          = link_to "", class: "footerIn__title__lookMore" do
+            %p すべて見る
+            = icon("fas", "angle-right", class: "footerIn__title__lookMore__icon")
+        .footerIn__contents
+          %ul.footerIn__contents__list
+            %li.footerIn__contents__list__item
+              = link_to "# 便利グッズ", "", class: "footerIn__contents__list__item__link"
+            %li.footerIn__contents__list__item
+              = link_to "# レストラン", "", class: "footerIn__contents__list__item__link"
+            %li.footerIn__contents__list__item
+              = link_to "# ガジェット", "", class: "footerIn__contents__list__item__link"
+          %ul.footerIn__contents__list
+            %li.footerIn__contents__list__item
+              = link_to "# テクノロジー", "", class: "footerIn__contents__list__item__link"
+            %li.footerIn__contents__list__item
+              = link_to "# 日本製", "", class: "footerIn__contents__list__item__link"
+            %li.footerIn__contents__list__item
+              = link_to "# リュック", "", class: "footerIn__contents__list__item__link"
+      .footerIn__discover__byCategories
+        %h5.footerIn__title
+          カテゴリー
+          = link_to "", class: "footerIn__title__lookMore" do
+            %p すべて見る
+            = icon("fas", "angle-right", class: "footerIn__title__lookMore__icon")
+        .footerIn__contents
+          %ul.footerIn__contents__list
+            %li.footerIn__contents__list__item
+              = link_to "プロダクト", "", class: "footerIn__contents__list__item__link"
+            %li.footerIn__contents__list__item
+              = link_to "ファッション", "", class: "footerIn__contents__list__item__link"
+            %li.footerIn__contents__list__item
+              = link_to "フード", "", class: "footerIn__contents__list__item__link"
+          %ul.footerIn__contents__list
+            %li.footerIn__contents__list__item
+              = link_to "ゲーム", "", class: "footerIn__contents__list__item__link"
+            %li.footerIn__contents__list__item
+              = link_to "演劇・パフォーマンス", "", class: "footerIn__contents__list__item__link"
+            %li.footerIn__contents__list__item
+              = link_to "お笑い・エンタメ", "", class: "footerIn__contents__list__item__link"
+    .footerIn__info
+      .footerIn__info__inquiry
+        %h5.footerIn__title メニュー
+        %ul.footerIn__contents__list
+          %li.footerIn__contents__list__item
+            = link_to "プロジェクトを掲載する", "", class: "footerIn__contents__list__item__link"
+          %li.footerIn__contents__list__item
+            = link_to "ヘルプ", "", class: "footerIn__contents__list__item__link"
+          %li.footerIn__contents__list__item
+            = link_to "プレスリリース", "", class: "footerIn__contents__list__item__link"
+          %li.footerIn__contents__list__item
+            = link_to "お問い合わせ・取材受付", "", class: "footerIn__contents__list__item__link"
+          %li.footerIn__contents__list__item
+            = link_to "採用情報", "", class: "footerIn__contents__list__item__link"
+          %li.footerIn__contents__list__item
+            = link_to "Makuake Incubation Studio", "", class: "footerIn__contents__list__item__link"
+      .footerIn__info__sns
+        %h5.footerIn__title オフィシャル
+        %ul.footerIn__info__sns__list
+          %li.footerIn__info__sns__list__item
+            = link_to "https://www.facebook.com/makuake", target: "_blank", class: "footerIn__info__sns__list__item__link facebookColor" do
+              = icon("fab", "facebook-f", class: "footerIn__info__sns__list__item__icon")
+              %span.footerIn__info__sns__list__item__text Facebook
+          %li.footerIn__info__sns__list__item
+            = link_to "https://twitter.com/makuake_ca", target: "_blank", class: "footerIn__info__sns__list__item__link twitterColor" do
+              = icon("fab", "twitter", class: "footerIn__info__sns__list__item__icon")
+              %span.footerIn__info__sns__list__item__text Makuake_ca
+          %li.footerIn__info__sns__list__item
+            = link_to "http://blog.makuake.com/posts/919350", target: "_blank", class: "footerIn__info__sns__list__item__link lineColor" do
+              = icon("fab", "line", class: "footerIn__info__sns__list__item__icon")
+              %span.footerIn__info__sns__list__item__text LINE@
+          %li.footerIn__info__sns__list__item
+            = link_to "https://www.instagram.com/makuake_official", target: "_blank", class: "footerIn__info__sns__list__item__link instagramColor" do
+              = icon("fab", "instagram", class: "footerIn__info__sns__list__item__icon")
+              %span.footerIn__info__sns__list__item__text Instagram
+      .footerIn__info__app
+        / %h5.footerIn__title App
+        / = link_to "https://itunes.apple.com/jp/app/makuake/id1274816320?mt=8", target: "_blank" do
+        /   = icon("fab", "app-store", class: "footerIn__info__app__icon")
+    .footerIn__bottom
+      .footerIn__bottom__copyright
+        %small Copyright © Makuake, Inc. All Rights Reserved.
+      .footerIn__bottom__companyInfo
+        %ul.footerIn__bottom__companyInfo__list
+          %li
+            = link_to "運営会社", "", class: "footerIn__bottom__companyInfo__list__link"
+          %li
+            = link_to "利用規約", "", class: "footerIn__bottom__companyInfo__list__link"
+          %li
+            = link_to "プライバシーポリシー", "", class: "footerIn__bottom__companyInfo__list__link"

@@ -1,0 +1,20 @@
+%header
+  .headerIn
+    %h1= link_to 'M a k u a k e', root_path, class: "headerIn__siteId"
+    = form_tag root_path, method: "get", class: "headerIn__search" do
+      = text_field_tag "keyword", "", class: "headerIn__search__input"
+      = button_tag type: "submit", id: "start_search", class: "headerIn__search__button" do
+        = icon("fas", "search", class: "headerIn__search__button__icon")
+        %span.findFormHeaderSubmit-txt 探す
+    %nav.headerIn__nav
+      %ul.headerIn__nav__list
+        %li
+          =link_to "プロジェクトを掲載する", "", class: "headerIn__nav__list__apply"
+        %li
+          = link_to "", class: "headerIn__nav__list__favorite" do
+            = icon("far", "heart", class: "headerIn__nav__list__favorite__icon")
+            %p.headerIn__nav__list__favorite__text お気に入り
+        %li
+          = link_to "ログイン", "", class: "headerIn__nav__list__signIn"
+        %li
+          = link_to "新規登録", "", id: "regist", class: "headerIn__nav__list__signUp"

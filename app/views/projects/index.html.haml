@@ -1,0 +1,62 @@
+.featuredProjects
+  .featuredProjects__slide
+    %ul
+      - for num in 1..1 do
+        %li.featuredProjects__slide__list{style: "background: url(http://see-holiday.com/wp-content/uploads/2014/07/26-e1404459210585.jpg) no-repeat 50% 50%; background-size: cover;"}
+          .featuredProjects__slide__list__item
+            = link_to "", target: "_self" do
+              .featuredProjects__slide__list__item__image
+                %img{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか"}
+              .featuredProjects__slide__list__item__title
+                %p Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか
+            .featuredProjects__slide__list__item__info
+              .featuredProjects__slide__list__item__info__style
+                %span.featuredProjects__slide__list__item__info__style__title 残り
+                %span.featuredProjects__slide__list__item__info__style__data ４日
+              .featuredProjects__slide__list__item__info__style
+                %span.featuredProjects__slide__list__item__info__style__title 集まっている金額
+                %span.featuredProjects__slide__list__item__info__style__data 4,000,000円
+              .featuredProjects__slide__list__item__info__targetAchievementRatio
+                .featuredProjects__slide__list__item__info__targetAchievementRatio__chart
+                  .featuredProjects__slide__list__item__info__targetAchievementRatio__chart__data
+                %span.featuredProjects__slide__list__item__info__style__data 600%
+            .featuredProjects__slide__list__item__look
+              = link_to "VIEW", "https://www.makuake.com/apply/?from=hero_image_6", target: "_self"
+  %nav.featuredProjects__nav
+    %ul.featuredProjects__nav__list
+      - for num in 1..3 do
+        %li
+          =link_to "" do
+            %img.featuredProjects__nav__list__image{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか"}
+.contents
+  %section
+    .contents__catchCopy
+      %h2.contents__catchCopy__main 新たなチェレンジを応援しよう。
+      %p.contents__catchCopy__sub 世の中を良くする新しいチャレンジが毎日続々と登場。
+    .contents__projects
+      - for num in 1..4 do
+        .contents__projects__project
+          %article
+            = link_to "", target: "_self" do
+              .contents__projects__project__image
+                %img{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか"}
+              %h4.contents__projects__project__title Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか
+            .contents__projects__project__info
+              .contents__projects__project__info__style
+                = icon("far", "clock", class: "contents__projects__project__info__style__icon")
+                %p.contents__projects__project__info__style__data 6日
+              .contents__projects__project__info__style
+                = icon("fas", "yen-sign", class: "contents__projects__project__info__style__icon")
+                %p.contents__projects__project__info__style__data 1,826,500円
+            .contents__projects__project__targetAchivementRatio
+              .contents__projects__project__targetAchivementRatio__chart
+                .contents__projects__project__targetAchivementRatio__chart__data
+              .contents__projects__project__targetAchivementRatio__data 50%
+    = link_to "", class: "showMore" do
+      %p more
+      = icon("fas", "angle-right", class: "showMore__icon")
+  %section
+    .contents__explanationMakuake
+      %h2.contents__explanationMakuake__title クラウドファンディングサイトMakuakeの特徴
+      %p.contents__explanationMakuake__explanation Makuakeでクラウドファンディングを実施するプロジェクト実行者は、掲載した自らのプロジェクトに賛同してくれたサポーター（資金提供者）に対してそれぞれが提供してくれた資金額に従いプレミアムなモノやサービスをお返しします。掲載されたプロジェクトはサイバーエージェントグループが運営する4000万人の会員数を誇るAmebaや、その他のメディアからの集客を行うことでより多くのネットユーザーにプロジェクトのアイデアを知ってもらうことができます。同時に、スマートフォンユーザー向けに最適化されたページ表示にも対応しており、決済手段に関してもクレジットカード・ペイジー(銀行振込)・ネットバンク振込・コンビニ払いを用意することでスムーズな支援が可能なサービスとなっております。
+
