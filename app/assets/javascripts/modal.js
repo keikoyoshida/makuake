@@ -14,4 +14,18 @@ $(document).on('turbolinks:load', function () {
       });
     });
   });
+  //新規登録
+  $(".headerIn__nav__list__signUp").on("click", function(){
+    //body内の最後に<div id="modal-bg"></div>を挿入
+    $("body").append('<div class="modal__bg"></div>');
+    //モーダルウィンドウを表示
+    $(".modal, .modal__signUp, .modal__bg").fadeIn("slow");
+    //画面のどこかをクリックしたらモーダルを閉じる
+    $(".modal__bg").on("click", function(){
+      $(".modal, .modal__signUp, .modal__bg").fadeOut("slow",function(){
+        //挿入した<div id="modal-bg"></div>を削除
+        $(".modal__bg").remove() ;
+      });
+    });
+  });
 });
