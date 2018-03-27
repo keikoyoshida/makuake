@@ -15,6 +15,8 @@
             = icon("far", "heart", class: "headerIn__nav__list__favorite__icon")
             %p.headerIn__nav__list__favorite__text お気に入り
         %li
-          = link_to "ログイン", "", class: "headerIn__nav__list__signIn"
+          = link_to "ログイン", new_user_session_path, remote: true, class: "headerIn__nav__list__signIn"
         %li
-          = link_to "新規登録", "", id: "regist", class: "headerIn__nav__list__signUp"
+          = link_to "新規登録", new_user_registration_path, id: "regist", class: "headerIn__nav__list__signUp"
+#user-modal.modal.fade{rabindex: -1, role: "dialog", 'aria-hidden': "true"}
+/ <div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
