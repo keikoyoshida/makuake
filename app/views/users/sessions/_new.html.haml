@@ -1,0 +1,36 @@
+.modal__signIn
+  %p.modal__title ログイン
+  = button_tag "", class: "modal__linkTo__signInUp" do
+    新規会員登録はこちら
+    = icon("fas", "angle-right", class: "modal__linkTo__signInUp__icon")
+  .modal__content
+    .modal__content__left
+      %p.modal__content__title SNSでログイン
+      = link_to "", class: "modal__content__regist facebookColor" do
+        = icon("fab", "facebook-f", class: "modal__content__regist__icon")
+        Facebook
+      = link_to "", class: "modal__content__regist twitterColor" do
+        = icon("fab", "twitter", class: "modal__content__regist__icon")
+        Twitter
+      = link_to "", class: "modal__content__regist lineColor" do
+        = icon("fab", "line", class: "modal__content__regist__icon")
+        LINE
+      = link_to "", class: "modal__content__regist amebaColor" do
+        = icon("fas", "baseball-ball", class: "modal__content__regist__icon")
+        Ameba
+    .modal__content__right
+      %p.modal__content__title Makuake IDでログイン
+      = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+        .modal__content__field
+          = f.label "メールアドレス", class: "modal__content__field__label"
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "modal__content__field__input"
+        .modal__content__field
+          .modal__content__field__note
+            = f.label "パスワード", class: "modal__content__field__label"
+            %p.modal__content__field__note__explanation ※半角英数字6文字以上
+          = f.password_field :password, autocomplete: "off", class: "modal__content__field__input"
+        .modal__content__actions
+          = link_to "", class: "modal__content__actions__forgetPass" do
+            パスワードを忘れた方はこちら
+            = icon("fas", "angle-right", class: "modal__content__actions__forgetPass__icon")
+          = f.submit "ログイン", class: "modal__content__actions__button"
