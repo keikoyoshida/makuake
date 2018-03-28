@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates :name, :email, presence: true
+  # ユーザー名3-20文字
+  validates :name, length: { minimum: 3, maximum: 20 }
+  # 利用規約への同意フラグ（カラムなし）
+  validates_acceptance_of :agreement, allow_nil: false, message: "チェックをしてください", on: :create
 end
