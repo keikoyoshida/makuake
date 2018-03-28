@@ -6,7 +6,7 @@
   left: 50%;
   margin-left: -442px;
   top: 70px;
-  width: 884px;
+  width: 804px;
   padding: 40px;
   background: $whiteBoxColor;
   border-radius: 4px;
@@ -33,14 +33,12 @@
     display: flex;
     &__left {
       border-right: 1px solid $paleGrayLineColor;
-      padding-right: 46px;
       width: 50%;
-      padding: 20px 0;
+      padding: 20px 46px 20px 0;
     }
     &__right {
-      padding-left: 46px;
       width: 50%;
-      padding: 20px 0;
+      padding: 20px 0 20px 46px;
     }
     &__title {
       font-size: 20px;
@@ -92,7 +90,7 @@
         border: solid 1px $grayLineColor;
         border-radius: 2px;
         background-color: $whiteBoxColor;
-        width: 236px;
+        width: 220px;
         height: 26px;
       }
       &__note {
@@ -111,7 +109,6 @@
     &__actions {
       position: relative;
       margin-top: 30px;
-      padding-left: 68px;
       &__forgetPass {
         text-align: center;
         position: absolute;
