@@ -1,12 +1,14 @@
 //modal
 $(document).on('turbolinks:load', function () {
   //ログインをクリックしたら
-  $(".headerIn__nav__list__signIn").on("click", function(){
+  $(".signIn").on("click", function(){
+    $(".modal__signUp, .modal__bg").hide() ;
+    $(".modal__bg").remove() ;
     //body内の最後に<div id="modal-bg"></div>を挿入
     $("body").append('<div class="modal__bg"></div>');
     //モーダルウィンドウを表示
     $(".modal, .modal__signIn, .modal__bg").fadeIn("slow");
-    //画面のどこかをクリックしたらモーダルを閉じる
+    //背景をクリックしたらモーダルを閉じる
     $(".modal__bg").on("click", function(){
       $(".modal, .modal__signIn, .modal__bg").fadeOut("slow",function(){
         //挿入した<div id="modal-bg"></div>を削除
@@ -15,7 +17,9 @@ $(document).on('turbolinks:load', function () {
     });
   });
   //新規登録
-  $(".headerIn__nav__list__signUp").on("click", function(){
+  $(".signUp").on("click", function(){
+    $(".modal__signIn, .modal__bg").hide() ;
+    $(".modal__bg").remove() ;
     //body内の最後に<div id="modal-bg"></div>を挿入
     $("body").append('<div class="modal__bg"></div>');
     //モーダルウィンドウを表示

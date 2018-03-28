@@ -59,50 +59,45 @@ header {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-        &__apply {
-          color: $blackTextColor;
-          font-size: 14px;
-          height: 66px;
-          margin-right: 23px;
-          text-decoration: none;
-        }
-        &__favorite {
-          color: $blackTextColor;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 14px;
-          height: 66px;
-          text-decoration: none;
-        }
-        &__signIn {
-          width: 86px;
-          height: 34px;
-          line-height: 35px;
-          text-align: center;
-          border-radius: 3px;
-          display: block;
-          background: $yellowBoxColor;
-          color: white;
-          font-size: 14px;
-          margin-left: 31px;
-          text-decoration: none;
-          cursor: pointer;
-        }
-        &__signUp {
-          width: 86px;
-          height: 34px;
-          line-height: 32px;
-          text-align: center;
-          border-radius: 3px;
-          border: 2px solid $yellowBoxColor;
-          color: $yellowBoxColor;
-          display: block;
-          font-size: 14px;
-          margin-left: 16px;
-          text-decoration: none;
-          cursor: pointer;
-        }
+      &__apply {
+        color: $blackTextColor;
+        font-size: 14px;
+        height: 66px;
+        margin-right: 23px;
+        text-decoration: none;
+      }
+      &__favorite {
+        color: $blackTextColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        height: 66px;
+        text-decoration: none;
+      }
+      &__button {
+        width: 86px;
+        height: 34px;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 3px;
+        display: block;
+        background: $yellowBoxColor;
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+        cursor: pointer;
+      }
     }
   }
+}
+
+.signIn {
+  margin-left: 31px;
+}
+.signUp {
+  margin-left: 16px;
+}
+.signOut {
+  margin-left: 31px;
 }

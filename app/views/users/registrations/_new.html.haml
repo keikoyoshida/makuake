@@ -1,8 +1,8 @@
 .modal__signUp
   %p.modal__title 会員登録
-  = button_tag "", class: "modal__linkTo__signInUp" do
+  = button_tag "", class: "modal__linkTo signIn" do
     ログインはこちら
-    = icon("fas", "angle-right", class: "modal__linkTo__signInUp__icon")
+    = icon("fas", "angle-right")
   %p.modal__subtitle \約1分で登録でき、Makuakeを楽しめます！/
   .modal__content
     .modal__content__left
@@ -25,9 +25,9 @@
         .modal__content__field
           = f.label "メールアドレス", class: "modal__content__field__label"
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "modal__content__field__input"
-        .modal__content__field
-          = f.label "確認", class: "modal__content__field__label"
-          = f.email_field :email, autocomplete: "email", class: "modal__content__field__input"
+        / .modal__content__field
+        /   = f.label "確認", class: "modal__content__field__label"
+        /   = f.email_field :email, autocomplete: "email", class: "modal__content__field__input"
         .modal__content__field
           .modal__content__field__note
             = f.label "ユーザー名", class: "modal__content__field__label"
