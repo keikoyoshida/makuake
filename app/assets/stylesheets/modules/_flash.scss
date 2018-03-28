@@ -1,0 +1,17 @@
+.flash {
+  height: 66px;
+  width: 100%;
+  font-size: 30px;
+  color: $blackTextColor;
+  text-align: center;
+  line-height: 66px;
+  position: fixed;
+  top: -66px;
+  z-index: $flash;
+  &__alert{
+    background-color: red;
+  }
+  &__notice {
+    background-color: $yellowBoxColor;
+  }
+}
