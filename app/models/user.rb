@@ -7,5 +7,5 @@ class User < ApplicationRecord
   # ユーザー名3-20文字
   validates :name, length: { minimum: 3, maximum: 20 }
   # 利用規約への同意フラグ（カラムなし）
-  validates_acceptance_of :agreement, allow_nil: false, message: "チェックをしてください", on: :create
+  validates :terms_of_service, acceptance: true
 end

@@ -43,17 +43,9 @@
           = f.password_field :password_confirmation, autocomplete: "off", class: "modal__content__field__input"
         .modal__content__actions
           .modal__content__actions__agreement
-            = f.check_box :agreement, as: "boolean", checked: false
+            = f.check_box :terms_of_service
             = link_to "利用規約", "", target: "blank"
             に同意する
           %p.modal__content__field__note__explanation ※makuake.comからのメールアドレスが受信拒否設定に含まれていないかご確認ください。
           %p.modal__content__field__note__explanation ※Makuakeからのメールマガジン／各種お知らせをお送りさせていただきます。（不要な場合は登録後に解除できます。）
           = f.submit "OK", class: "modal__content__actions__signUpButton"
-/ <div class="agreement">
-/ <label class="checkbox">
-/ <%= f.input :agreement, :as => :hidden %><%# エラーメッセージ表示用 %>
-/ <%= f.check_box :agreement, :as => :boolean, checked:false %>
-/ <%= link_to "利用規約", terms_path, { target:"blank" } %>に同意する
-/ </label>
-/ <small class="help-block">※利用規約に同意できない場合は登録をご遠慮ください。</small>
-/ </div>
