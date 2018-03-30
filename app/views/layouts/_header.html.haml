@@ -14,7 +14,11 @@
           = link_to "", class: "headerIn__nav__list__favorite" do
             = icon("far", "heart", class: "headerIn__nav__list__favorite__icon")
             %p.headerIn__nav__list__favorite__text お気に入り
-        %li
-          = link_to "ログイン", "", class: "headerIn__nav__list__signIn"
-        %li
-          = link_to "新規登録", "", id: "regist", class: "headerIn__nav__list__signUp"
+          - if user_signed_in?
+            %li
+              = link_to "ログアウト", destroy_user_session_path, method: "delete", class: "headerIn__nav__list__button signOut"
+          - else
+            %li
+              = button_tag "ログイン", class: "headerIn__nav__list__button signIn"
+            %li
+              = button_tag "新規登録", class: "headerIn__nav__list__button signUp"

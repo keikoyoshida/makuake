@@ -7,6 +7,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = render partial: 'layouts/flash'
     = render partial: "layouts/header"
     = yield
     = render partial: "layouts/footer"
+    .modal
+      = render partial: "users/sessions/new"
+      = render partial: "users/registrations/new"
