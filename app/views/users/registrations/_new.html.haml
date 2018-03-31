@@ -21,7 +21,8 @@
         Ameba
     .modal__content__right
       %p.modal__content__title メールアドレスで新規登録
-      = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+      .modal__content__formErrors
+      = form_for resource, as: resource_name, url: registration_path(resource_name), remote: true, class: "modal__form__signUp" do |f|
         .modal__content__field
           = f.label "メールアドレス", class: "modal__content__field__label"
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "modal__content__field__input"
