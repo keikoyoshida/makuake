@@ -4,6 +4,7 @@ $(document).on('turbolinks:load', function () {
   $(".signIn").on("click", function(){
     $(".modal__signUp, .modal__bg").hide() ;
     $(".modal__bg").remove() ;
+    $('.modal__content__formErrors').empty();
     //body内の最後に<div id="modal-bg"></div>を挿入
     $("body").append('<div class="modal__bg"></div>');
     //モーダルウィンドウを表示
@@ -20,6 +21,7 @@ $(document).on('turbolinks:load', function () {
   $(".signUp").on("click", function(){
     $(".modal__signIn, .modal__bg").hide() ;
     $(".modal__bg").remove() ;
+    $('.modal__content__formErrors').empty();
     //body内の最後に<div id="modal-bg"></div>を挿入
     $("body").append('<div class="modal__bg"></div>');
     //モーダルウィンドウを表示
