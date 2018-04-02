@@ -1,7 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
 
-  respond_to :html, :json
-
   def new
     super
   end
@@ -22,8 +20,8 @@ class Users::SessionsController < Devise::SessionsController
   protected
   def auth_options
     # 失敗時に recall に設定したパスのアクションが呼び出されるので変更
-    { scope: resource_name, recall: "#{controller_path}#new" } # デフォルト
-    # { scope: resource_name, recall: "#{controller_path}#login_error" }
+    # { scope: resource_name, recall: "#{controller_path}#new" } # デフォルト
+    { scope: resource_name, recall: "#{controller_path}#login_error" }
   end
 
 end
