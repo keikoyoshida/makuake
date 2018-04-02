@@ -1,6 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
 
-  respond_to :html, :js
+  respond_to :html, :json
 
   def new
     super
@@ -11,8 +11,8 @@ class Users::SessionsController < Devise::SessionsController
     set_flash_message!(:notice, :signed_in)
     sign_in(resource_name, resource)
     yield resource if block_given?
-    # respond_with resource, location: after_sign_in_path_for(resource)
-    redirect_to root_path
+    respond_with resource, location: after_sign_in_path_for(resource)
+    # redirect_to root_path
   end
 
 # 認証が失敗した場合に呼び出されるアクション
@@ -22,8 +22,8 @@ class Users::SessionsController < Devise::SessionsController
   protected
   def auth_options
     # 失敗時に recall に設定したパスのアクションが呼び出されるので変更
-    # { scope: resource_name, recall: "#{controller_path}#new" } # デフォルト
-    { scope: resource_name, recall: "#{controller_path}#login_error" }
+    { scope: resource_name, recall: "#{controller_path}#new" } # デフォルト
+    # { scope: resource_name, recall: "#{controller_path}#login_error" }
   end
 
 end
