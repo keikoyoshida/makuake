@@ -58,3 +58,6 @@ gem 'font-awesome-sass', '~> 5.0.6'
 gem "jquery-slick-rails"
 
 gem 'devise'
+
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
