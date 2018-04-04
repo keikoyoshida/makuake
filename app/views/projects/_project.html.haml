@@ -1,0 +1,22 @@
+.contents__projects__project
+  %article
+    = link_to project_path(project), target: "_self" do
+      .contents__projects__project__image
+        = image_tag project.heading_movie.url, alt: "project.title"
+        / %img{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか"}
+      %h4.contents__projects__project__title= project.title
+    .contents__projects__project__info
+      .contents__projects__project__info__style
+        = icon("far", "clock", class: "contents__projects__project__info__style__icon")
+        %p.contents__projects__project__info__style__data
+          = project.remaining_days
+          日
+      .contents__projects__project__info__style
+        = icon("fas", "yen-sign", class: "contents__projects__project__info__style__icon")
+        %p.contents__projects__project__info__style__data
+          = number_with_delimiter(project.targeted_amount)
+          円
+    .contents__projects__project__targetAchivementRatio
+      .contents__projects__project__targetAchivementRatio__chart
+        .contents__projects__project__targetAchivementRatio__chart__data
+      .contents__projects__project__targetAchivementRatio__data 50%

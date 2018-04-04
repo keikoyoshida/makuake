@@ -34,24 +34,7 @@
       %h2.contents__catchCopy__main 新たなチェレンジを応援しよう。
       %p.contents__catchCopy__sub 世の中を良くする新しいチャレンジが毎日続々と登場。
     .contents__projects
-      - for num in 1..4 do
-        .contents__projects__project
-          %article
-            = link_to "", target: "_self" do
-              .contents__projects__project__image
-                %img{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか"}
-              %h4.contents__projects__project__title Makuakeで「世の中をワクワクさせるようなプロジェクト」を掲載してみませんか
-            .contents__projects__project__info
-              .contents__projects__project__info__style
-                = icon("far", "clock", class: "contents__projects__project__info__style__icon")
-                %p.contents__projects__project__info__style__data 6日
-              .contents__projects__project__info__style
-                = icon("fas", "yen-sign", class: "contents__projects__project__info__style__icon")
-                %p.contents__projects__project__info__style__data 1,826,500円
-            .contents__projects__project__targetAchivementRatio
-              .contents__projects__project__targetAchivementRatio__chart
-                .contents__projects__project__targetAchivementRatio__chart__data
-              .contents__projects__project__targetAchivementRatio__data 50%
+      = render @projects
     = link_to "", class: "showMore" do
       %p more
       = icon("fas", "angle-right", class: "showMore__icon")
