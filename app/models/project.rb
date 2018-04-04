@@ -9,4 +9,11 @@ class Project < ApplicationRecord
   mount_uploader :content_image, ImageUploader
 
   attr_accessor :remaining_days
+
+  validates :title, presence: true
+  validates :heading_movie, presence: true
+  validates :content_html, presence: true
+  validates :deadline, presence: true
 end
+
+
