@@ -7,4 +7,6 @@ class Project < ApplicationRecord
 
   mount_uploader :heading_movie, ImageUploader
   mount_uploader :content_image, ImageUploader
+
+  attr_accessor :remaining_days
 end
