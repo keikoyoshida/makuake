@@ -17,6 +17,9 @@
   .projectForm__content_image
     = f.label :content_image
     = f.file_field :content_image
+  .projectForm__targeted_amount
+    = f.label :targeted_amount
+    = f.number_field :targeted_amount
   .projectForm__deadline
     = f.label :deadline
     = f.date_select :deadline

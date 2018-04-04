@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
+    @projects = Project.all.includes(:project_type, :user).order(created_at: "DESC").limit(9)
   end
 
   def new
@@ -25,7 +26,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :heading_movie, :content_html, :content_image, :deadline, :project_type_id).merge(user_id: current_user.id)
+    params.require(:project).permit(:title, :heading_movie, :content_html, :content_image, :targeted_amount, :deadline, :project_type_id).merge(user_id: current_user.id)
   end
 
 end
