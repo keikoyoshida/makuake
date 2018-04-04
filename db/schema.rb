@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404072018) do
+ActiveRecord::Schema.define(version: 20180404072638) do
 
   create_table "project_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "type",       null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180404072018) do
     t.string   "heading_movie",                 null: false
     t.text     "content_html",    limit: 65535, null: false
     t.string   "content_image"
-    t.time     "deadline",                      null: false
+    t.date     "deadline",                      null: false
     t.integer  "user_id"
     t.integer  "project_type_id"
     t.datetime "created_at",                    null: false
