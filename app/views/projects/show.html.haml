@@ -1,0 +1,141 @@
+.grayBase
+  .nav
+    %ul.nav__menue
+      %li
+        = link_to "プロジェクト", project_path(@project), class: "nav__menue__listStyle"
+      %li
+        = link_to "活動レポート", "", class: "nav__menue__listStyle"
+      %li
+        = link_to "応援コメント", "", class: "nav__menue__listStyle"
+    .nav__favorite
+      = link_to "", class: "nav__favorite__link" do
+        = icon("far", "heart", class: "nav__favorite__link__icon")
+        %span お気に入りに追加
+  .headline
+    .headline__content
+      .headline__content__heading_movie
+        = image_tag @project.heading_movie.url, alt: "@project.title"
+      .headline__content__info
+        .headline__content__info__info
+          .headline__content__info__info__money
+            %p.headline__content__info__info__money__title
+              = icon("fas", "yen-sign", class: "headline__content__info__info__money__title__icon")
+              %span 集まっている金額
+            %p.headline__content__info__info__money__data 5,000円
+            %p.headline__content__info__info__money__targetedAmount
+              目標金額
+              = number_with_delimiter(@project.targeted_amount)
+              円
+          .headline__content__info__info__targetAchivementRatio
+            .headline__content__info__info__targetAchivementRatio__chart
+              %p.headline__content__info__info__targetAchivementRatio__chart__data 50%
+          .headline__content__info__info__supporter
+            %p.headline__content__info__info__title
+              = icon("fas", "user", class: "headline__content__info__info__title__icon")
+              %span サポーター
+            %p.headline__content__info__info__data 20人
+          .headline__content__info__info__remainingDays
+            %p.headline__content__info__info__title
+              = icon("far", "clock", class: "headline__content__info__info__title__icon")
+              %span 残り
+            %p.headline__content__info__info__data
+              = @project.remaining_days
+              日
+        .headline__content__info__showCourse
+          = link_to "支援するコースを選択する", "", class: "showCourseLink"
+  .title
+    .title__title
+      %h2= @project.title
+      .title__title__tag
+        - for num in 1..3 do
+          = link_to "#tag", "", class: "title__title__tag__link"
+    .title__categoryAndSns
+      .title__categoryAndSns__category
+        = link_to "", class: "title__categoryAndSns__category__link" do
+          = icon("fas", "tag", class: "title__categoryAndSns__category__link__icon")
+          category
+      .title__categoryAndSns__sns
+        / %ul
+        /   %li
+        /     .title__categoryAndSns__sns__facebook
+        /       = link_to "いいね！", "", class: "title__categoryAndSns__sns__facebook__link"
+        /   %li
+        /     .title__categoryAndSns__sns__twitter
+        /       = link_to "ツイート", "", class: "title__categoryAndSns__sns__twitter__link"
+        /   %li
+        /     .title__categoryAndSns__sns__g
+        /       = link_to "G+", "", class: "title__categoryAndSns__sns__g__link"
+        /   %li
+        /     .title__categoryAndSns__sns__iframe
+        /       = link_to "", class: "title__categoryAndSns__sns__iframe__link" do
+        /         = icon("fas", "angle-left", class: "title__categoryAndSns__sns__iframe__link__icon")
+        /         = icon("fas", "angle-right", class: "title__categoryAndSns__sns__iframe__link__icon")
+        /         埋め込み
+  .main
+    .main__leftContent
+      .main__leftContent__latestReport
+        %h3.main__leftContent__latestReport__title 実行者の最新投稿
+        %span.main__leftContent__latestReport__date 2018.04.16
+        = link_to "", class: "main__leftContent__latestReport__link__more" do
+          more
+          = icon("fas", "angle-right", class: "main__leftContent__latestReport__link__more__icon")
+        = link_to "" do
+          .main__leftContent__latestReport__messageBox
+            %span.main__leftContent__latestReport__messageBox__message ご支援ありがとうございます！...
+        .main__leftContent__latestReport__ownerInfo
+          %img{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "San-Diego", class: "main__leftContent__latestReport__ownerInfo__image"}
+          .main__leftContent__latestReport__ownerInfo__company
+            = link_to "", class: "main__leftContent__latestReport__ownerInfo__company__link" do
+              = @project.user.name
+          .main__leftContent__latestReport__ownerInfo__contact
+            = link_to "", class: "main__leftContent__latestReport__ownerInfo__contact__homepage" do
+              = icon("fas", "globe", class: "main__leftContent__latestReport__ownerInfo__contact__homepage__link__icon")
+            .main__leftContent__latestReport__ownerInfo__contact__border
+            = link_to "", class: "main__leftContent__latestReport__ownerInfo__contact__ask" do
+              = icon("fas", "envelope", class: "main__leftContent__latestReport__ownerInfo__contact__ask__icon")
+              %span 実行者へ問い合わせ
+      .main__leftContent__project
+        %p.main__leftContent__project__introduce= @project.content_html
+      .main__leftContent__showCourse
+        = link_to "支援するコースを選択する", "", class: "showCourseLink"
+      .main__leftContent__share
+        = link_to "", class: "main__leftContent__share__link facebookColor" do
+          = icon("fab", "facebook-f", class: "main__leftContent__share__facebook__icon")
+          %span Facebookでシェア
+        = link_to "", class: "main__leftContent__share__link twitterColor" do
+          = icon("fab", "twitter", class: "main__leftContent__share__twitter__icon")
+          %span twitterでシェア
+    .main__rightContent
+      %h3.main__rightContent__title 支援するコースを選択する
+      .main__rightContent__projectType
+        %p= @project.project_type.type
+      - for num in 1..3 do
+        .main__rightContent__course
+          .main__rightContent__course__price
+            %h4.main__rightContent__course__price__price
+              1,000円コース
+              %span （税込）
+            .main__rightContent__course__title__remaining
+              %p 残り10個
+          = link_to "", class: "main__rightContent__course__link" do
+            %h5.main__rightContent__course__title sample
+            .main__rightContent__course__image
+              %img{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "San-Diego", class: "main__rightContent__course__image__data"}
+            %p.main__rightContent__course__text the most beautiful city in the United States
+            %p.main__rightContent__course__supporter
+              = icon("fas", "user", class: "main__rightContent__course__supporter__icon")
+              %span 5人が支援しています
+            %p.main__rightContent__course__schedule
+              = icon("fas", "shopping-bag", class: "main__rightContent__course__schedule__icon")
+              %span 2018年4月下旬にお届け予定です
+          .main__rightContent__course__apply
+            = link_to "このコースへ申し込む", "", class: "main__rightContent__course__apply__link"
+      .main__rightContent__contact
+        =link_to "", class: "main__rightContent__contact__link" do
+          = icon("fas", "envelope", class: "main__rightContent__contact__link__icon")
+          %span 実行者へ問い合わせ
+      .main__rightContent__info
+        %p
+          Makuake（マクアケ）」は、実行者の想いをサポーターの支援によって実現するクラウドファンディングサイトです。このページは、プロダクトカテゴリの「
+          = @project.title
+          」プロジェクト詳細ページです。
