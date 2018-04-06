@@ -464,6 +464,7 @@
   text-decoration: none;
   font-size: 22px;
   text-align: center;
+  cursor: pointer;
 }
 
 .title {
@@ -545,20 +546,27 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        height: 76px;
+        height: 50px;
         margin-top: 18px;
         border-radius: 4px;
         border: 1px solid $paleGrayLineColor;
         background-color: $whiteBoxColor;
+
+        overflow: hidden;
+        padding: 12px 10px;
         &__message {
           width: 616px;
-          height: 74px;
-          display: inline-block;
-          padding: 12px 10px;
+          height: 50px;
           font-size: 14px;
           line-height: 1.8;
           color: $blackTextColor;
           overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        &__message:hover {
+           opacity: 0.5;
         }
       }
       &__ownerInfo {

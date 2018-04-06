@@ -14,7 +14,7 @@
   .headline
     .headline__content
       .headline__content__heading_movie
-        = image_tag @project.heading_movie.url, alt: "@project.title"
+        = image_tag @project.heading_movie.url, alt: @project.title
       .headline__content__info
         .headline__content__info__info
           .headline__content__info__info__money
@@ -81,7 +81,7 @@
           = icon("fas", "angle-right", class: "main__leftContent__latestReport__link__more__icon")
         = link_to "" do
           .main__leftContent__latestReport__messageBox
-            %span.main__leftContent__latestReport__messageBox__message ご支援ありがとうございます！...
+            %p.main__leftContent__latestReport__messageBox__message ご支援ありがとうございます！San Diego is a major city in California, United States. It is in San Diego County, on the coast of the Pacific Ocean in Southern California, approximately 120 miles (190 km) south of Los Angeles and immediately adjacent to the border with Mexico.
         .main__leftContent__latestReport__ownerInfo
           %img{src: "http://travelwithgrant.boardingarea.com/wp-content/uploads/2014/05/San-Diego-City-Logo.png", alt: "San-Diego", class: "main__leftContent__latestReport__ownerInfo__image"}
           .main__leftContent__latestReport__ownerInfo__company
@@ -95,7 +95,8 @@
               = icon("fas", "envelope", class: "main__leftContent__latestReport__ownerInfo__contact__ask__icon")
               %span 実行者へ問い合わせ
       .main__leftContent__project
-        %p.main__leftContent__project__introduce= @project.content_html
+        .main__leftContent__project__introduce
+          = @project.content_html.html_safe
       .main__leftContent__showCourse
         = link_to "支援するコースを選択する", "", class: "showCourseLink"
       .main__leftContent__share
