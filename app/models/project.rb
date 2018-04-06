@@ -6,7 +6,7 @@ class Project < ApplicationRecord
   belongs_to :project_type
 
   mount_uploader :heading_movie, ImageUploader
-  mount_uploader :content_image, ImageUploader
+  mount_uploaders :content_image, ImageUploader
 
   attr_accessor :remaining_days
 

@@ -96,7 +96,11 @@
               %span 実行者へ問い合わせ
       .main__leftContent__project
         .main__leftContent__project__introduce
-          = @project.content_html.html_safe
+          != @project.content_html
+          = @project.content_image[0].url
+          / - @project.content_image.each_with_index do |image, index| #grab the index
+          /   = image_tag image[index].url
+          / = image_tag @project.content_image.url, alt: "content_images", style: "max-width: 100%;"
       .main__leftContent__showCourse
         = link_to "支援するコースを選択する", "", class: "showCourseLink"
       .main__leftContent__share
