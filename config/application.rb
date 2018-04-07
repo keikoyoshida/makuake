@@ -16,5 +16,8 @@ module Makuake
       g.helper false
       g.test_framework false
     end
+    # config.to_prepare do
+    #   DeviseController.respond_to :html, :json, :js
+    # end
   end
 end
