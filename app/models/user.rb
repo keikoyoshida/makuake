@@ -9,5 +9,5 @@ class User < ApplicationRecord
   # 利用規約への同意フラグ（カラムなし）
   validates :terms_of_service, acceptance: true
 
-  has_many :projects
+  has_many :projects, dependent: :destroy
 end
