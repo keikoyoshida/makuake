@@ -14,7 +14,8 @@
   .headline
     .headline__content
       .headline__content__heading_movie
-        = image_tag @project.heading_movie.url, alt: @project.title
+        = image_tag @project.heading_movie.url, alt: @project.title if @project.heading_movie.content_type.match(/image.+/)
+        = video_tag @project.heading_movie.url, alt: @project.title, controls: true if @project.heading_movie.content_type.match(/video.+/)
       .headline__content__info
         .headline__content__info__info
           .headline__content__info__info__money
