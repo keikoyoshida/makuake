@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
-    @projects = Project.all.includes(:project_type, :user).order(created_at: "DESC").limit(9)
+    @projects = Project.all.includes(:project_type, :user, :category).order(created_at: "DESC").limit(9)
     @projects.each do |project|
       remaining_days(project)
     end

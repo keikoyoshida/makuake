@@ -54,7 +54,7 @@
       .title__categoryAndSns__category
         = link_to "", class: "title__categoryAndSns__category__link" do
           = icon("fas", "tag", class: "title__categoryAndSns__category__link__icon")
-          category
+          = @project.category.category
       .title__categoryAndSns__sns
         / %ul
         /   %li
@@ -98,7 +98,12 @@
       .main__leftContent__project
         .main__leftContent__project__introduce
           != @project.content_html
-          = @project.content_image[0].url
+          / url
+          / = @project.content_image[0].url
+          / current_path
+          / = @project.content_image[0].current_path
+          / identifier
+          / = @project.content_image[0].identifier
           / - @project.content_image.each_with_index do |image, index| #grab the index
           /   = image_tag image[index].url
           / = image_tag @project.content_image.url, alt: "content_images", style: "max-width: 100%;"
