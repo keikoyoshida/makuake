@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
   end
 
   def remaining_days(project)
-    remaining_days = (project.deadline - Date.today).numerator
+    remaining_days = (project.deadline - Time.zone.today).numerator
     project.remaining_days = remaining_days
   end
 
