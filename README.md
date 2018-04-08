@@ -25,12 +25,13 @@ validates :name, email, presence: true
 |deadline|time|null: false, add_index|
 |project-type_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
 
 ### Association
 - has_many :tags, through: :project_tag
 - has_many :projectTags
 - has_many :supporters, reports, supportComments, couses, products
-- belongs_to :user, :projectType
+- belongs_to :user, :projectType, :category
 
 validates :title, :headingMovie, :contentHtml, :deadline, presence: true
 

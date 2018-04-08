@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408081040) do
+ActiveRecord::Schema.define(version: 20180408082702) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "category",   default: "", null: false
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20180408081040) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.integer  "targeted_amount",               null: false
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_projects_on_category_id", using: :btree
     t.index ["deadline"], name: "index_projects_on_deadline", using: :btree
     t.index ["project_type_id"], name: "index_projects_on_project_type_id", using: :btree
     t.index ["title"], name: "index_projects_on_title", using: :btree
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 20180408081040) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "projects", "categories"
   add_foreign_key "projects", "project_types"
   add_foreign_key "projects", "users"
 end
