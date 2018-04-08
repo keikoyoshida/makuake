@@ -58,6 +58,18 @@ validates :title, :headingMovie, :contentHtml, :deadline, presence: true
 validates :type, presence: true
 
 
+## categories table
+
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false, add_index unique: true|
+
+### Association
+- has_many :projects
+
+validates :category, presence: true
+
+
 ## project_tags table
 
 |Column|Type|Options|
