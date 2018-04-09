@@ -48,8 +48,10 @@
     .title__title
       %h2= @project.title
       .title__title__tag
-        - for num in 1..3 do
-          = link_to "#tag", "", class: "title__title__tag__link"
+        - @project.project_tags.each do |project_tag|
+          = link_to "", class: "title__title__tag__link" do
+            %span #
+            %span= project_tag.tag.tag
     .title__categoryAndSns
       .title__categoryAndSns__category
         = link_to "", class: "title__categoryAndSns__category__link" do
