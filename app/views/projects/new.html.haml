@@ -26,5 +26,11 @@
   .projectForm__project_type_id
     = f.label :project_type_id
     = f.collection_select :project_type_id, ProjectType.all, :id, :type
+  .projectForm__category_id
+    = f.label :category_id
+    = f.collection_select :category_id, Category.all, :id, :category
+  .projectForm__tag_ids
+    = f.label :tag_id
+    = f.collection_check_boxes :tag_ids, Tag.all, :id, :tag
   .projectForm__submit
     = f.submit 'Send'
