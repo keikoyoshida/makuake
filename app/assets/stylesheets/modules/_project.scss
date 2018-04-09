@@ -182,6 +182,7 @@
           border-radius: 2px 2px 0 0;
           width: 310px;
           height: 174px;
+          object-fit: cover;
         }
       }
       &__title {
@@ -342,6 +343,7 @@
       img, video {
         width: 690px;
         height: 388px;
+        object-fit: cover;
       }
     }
     &__info {
