@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project)
-          .permit(:title, :heading_movie, :content_html, { content_image: [] }, :targeted_amount, :deadline, :project_type_id, :category_id, { tag_ids: [] })
+          .permit(:title, :heading_movie, :content_html, { content_images: [] }, :targeted_amount, :deadline, :project_type_id, :category_id, { tag_ids: [] })
           .merge(user_id: current_user.id)
   end
 
