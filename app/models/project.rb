@@ -8,6 +8,9 @@ class Project < ApplicationRecord
 
   mount_uploader :heading_movie, ImageUploader
   mount_uploaders :content_images, ImageUploader
+  serialize :content_images, JSON
+
+  before_create :serialize_content_images
 
   attr_accessor :remaining_days
 
@@ -15,6 +18,11 @@ class Project < ApplicationRecord
   validates :heading_movie, presence: true
   validates :content_html, presence: true
   validates :deadline, presence: true
+
+  private
+  def serialize_content_images
+    content_images.to_json
+  end
 end
 
 
