@@ -1,9 +1,13 @@
 class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
   include CarrierWave::Magic
+  # include CarrierWave::Video
+
+  # process resize_to_limit: [690, 388]
   process :set_magic_content_type => [true]
+  # process encode_video: [resolution: "690x388"]
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -46,4 +50,5 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
 end
