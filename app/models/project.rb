@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   has_many :tags, through: :project_tags
   has_many :project_tags, dependent: :destroy
+  # the following tables will be used later
   # has_many :supporters, reports, support_comments, couses, products
   belongs_to :user
   belongs_to :project_type
