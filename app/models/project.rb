@@ -22,7 +22,6 @@ class Project < ApplicationRecord
 
   def remain_day
     remain_day = (self.deadline - Time.zone.today).numerator
-    return remain_day
   end
 
   private
