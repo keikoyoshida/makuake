@@ -21,7 +21,7 @@ class Project < ApplicationRecord
   validates :deadline, presence: true
 
   def remain_day
-    remain_day = (self.deadline - Time.zone.today).numerator
+    (self.deadline - Time.zone.today).numerator
   end
 
   private
