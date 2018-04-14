@@ -1,0 +1,36 @@
+= form_for @project, multipart: true, class: "projectForm" do |f|
+  - if @project.errors.any?
+    .projectForm__errors
+      %h2= "#{@project.errors.full_messages.count}件のエラーが発生しました。"
+      %ul
+        - @project.errors.full_messages.each do |message|
+          %li= message
+  .projectForm__title
+    = f.label :title
+    = f.text_field :title
+  .projectForm__heading_movie
+    = f.label :heading_movie
+    = f.file_field :heading_movie
+  .projectForm__content_html
+    = f.label :content_html
+    = f.text_field :content_html
+  .projectForm__content_image
+    = f.label :content_images
+    = f.file_field :content_images, multiple: true
+  .projectForm__targeted_amount
+    = f.label :targeted_amount
+    = f.number_field :targeted_amount
+  .projectForm__deadline
+    = f.label :deadline
+    = f.date_select :deadline
+  .projectForm__project_type_id
+    = f.label :project_type_id
+    = f.collection_select :project_type_id, ProjectType.all, :id, :type
+  .projectForm__category_id
+    = f.label :category_id
+    = f.collection_select :category_id, Category.all, :id, :category
+  .projectForm__tag_ids
+    = f.label :tag_id
+    = f.collection_check_boxes :tag_ids, Tag.all, :id, :tag
+  .projectForm__submit
+    = f.submit 'Send'

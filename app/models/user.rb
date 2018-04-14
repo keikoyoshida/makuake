@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :name, length: { minimum: 3, maximum: 20 }
   # 利用規約への同意フラグ（カラムなし）
   validates :terms_of_service, acceptance: true
+
+  has_many :projects, dependent: :destroy
 end

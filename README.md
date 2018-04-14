@@ -19,18 +19,19 @@ validates :name, email, presence: true
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false, add_index|
-|headingMovie|string|null: false, handle movie and image files|
-|contentHtml|text|null: false|
-|contentImage|string||
+|heading_movie|string|null: false, handle movie and image files|
+|content_html|text|null: false|
+|content_image|string||
 |deadline|time|null: false, add_index|
-|projectType_id|references|foreign_key: true|
+|project-type_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
 
 ### Association
 - has_many :tags, through: :project_tag
 - has_many :projectTags
 - has_many :supporters, reports, supportComments, couses, products
-- belongs_to :user, :projectType
+- belongs_to :user, :projectType, :category
 
 validates :title, :headingMovie, :contentHtml, :deadline, presence: true
 
@@ -46,7 +47,7 @@ validates :title, :headingMovie, :contentHtml, :deadline, presence: true
 - belongs_to :user, :project
 
 
-## projectTypes table
+## project_types table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -58,7 +59,19 @@ validates :title, :headingMovie, :contentHtml, :deadline, presence: true
 validates :type, presence: true
 
 
-## projectTags table
+## categories table
+
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null: false, add_index unique: true|
+
+### Association
+- has_many :projects
+
+validates :category, presence: true
+
+
+## project_tags table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -99,7 +112,7 @@ validates :tag, presence: true
 validates :title, presence: true
 
 
-## reportComments table
+## report_comments table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -113,7 +126,7 @@ validates :title, presence: true
 validates :comment, presence: true
 
 
-## reportHandclaps table
+## report_handclaps table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -124,7 +137,7 @@ validates :comment, presence: true
 - belongs_to :report, :user
 
 
-## supportComments table
+## support_comments table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -139,11 +152,11 @@ validates :comment, presence: true
 validates :comment, presence: true
 
 
-##supportCommentReples table
+##support_comment_reples table
 
 |Column|Type|Options|
 |------|----|-------|
-|supportComment_id|references|foreign_key: true|
+|support_comment_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
 |comment|text||
 
@@ -153,11 +166,11 @@ validates :comment, presence: true
 validates :comment, presence: true
 
 
-## supportCommentHandclaps table
+## support_comment_handclaps table
 
 |Column|Type|Options|
 |------|----|-------|
-|supportComment_id|references|foreign_key: true|
+|support_comment_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
 
 ### Association
@@ -184,7 +197,7 @@ validates :comment, presence: true
 validates :price, :amount, :title, :schedule, presence: true
 
 
-## userCourses table
+## user_courses table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
@@ -205,7 +218,7 @@ validates :price, :amount, :title, :schedule, presence: true
 |image|string|null: false|
 |content|text|null: false|
 |schedule|time|null: false|
-|lawNotificationHtml|text|null: false|
+|law_notification_html|text|null: false|
 
 ### Association
 - has_many :users through: :userProduct
@@ -215,7 +228,7 @@ validates :price, :amount, :title, :schedule, presence: true
 validates :price, :amount, :title, :schedule, :lawNotificationHtml, presence: true
 
 
-## userProducts table
+## user_products table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -255,22 +268,22 @@ end
 validates :option, presence: true
 
 
-## shippingAddresses table
+## shipping_addresses table
 |Column|Type|Options|
 |------|----|-------|
 |course_id|references|foreign_key: true|
 |project_id|references|foreign_key: true|
-|paymentMethod_id|references|foreign_key: true|
-|firstName|string|null: false|
-|familyName|string|null: false|
-|firstNameKana|string|null: false|
-|familyNameKana|string|null: false|
-|phoneNumber|integer|null: false|
-|zipCode|integer|null: false|
+|payment_method_id|references|foreign_key: true|
+|first_name|string|null: false|
+|family_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|phone_number|integer|null: false|
+|zip_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|houseNumber|string|null: false|
-|buildingName|string|null: false|
+|house_number|string|null: false|
+|building_name|string|null: false|
 
 ## Association
 - belongs_to :product, :course, :paymentMethod
@@ -283,11 +296,11 @@ end
 validates :firstName, :familyName, :firstNameKana, :familyNameKana, :phoneNumber, :zipCode, :prefecture, :city, :houseNumber, presence: true
 
 
-## paymentMethods table
+## payment_methods table
 
 |Column|Type|Options|
 |------|----|-------|
-|paymentMethod|string|null: false, add_index unique: true|
+|payment_method|string|null: false, add_index unique: true|
 
 ## Association
 - has_many :shippingAddresses
