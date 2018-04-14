@@ -20,6 +20,11 @@ class Project < ApplicationRecord
   validates :content_html, presence: true
   validates :deadline, presence: true
 
+  def remain_day
+    remain_day = (self.deadline - Time.zone.today).numerator
+    return remain_day
+  end
+
   private
   def serialize_content_images
     content_images.to_json
